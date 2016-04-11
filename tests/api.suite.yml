@@ -1,0 +1,7 @@
+class_name: ApiTester
+modules:
+    enabled:
+        - REST:
+            url: http://lideservice/
+            depends: PhpBrowser
+        - \Helper\Acceptance

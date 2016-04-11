@@ -1,0 +1,21 @@
+{
+    "name": "dendy/test",
+        "autoload": {
+            "classmap": [
+                "app/lib",
+                "app/controller",
+                "app/model",
+                "app/view",
+                "app/validation",
+                "public"
+            ]
+        },
+  "require-dev": {
+    "codeception/codeception": "2.*"
+
+  },
+    "require": {
+        "illuminate/database": "^5.2",
+        "illuminate/events": "^5.2"
+    }
+}
