@@ -20,19 +20,17 @@ class HandsUpModel
         $db = DataBase::getInstance();
 
 
-        if( $user == $_COOKIE['user']){
-            if($state == 'up' || $state == 'down' ){
+
+             $user = $db::table('users')->where('name', $user)->first();
+
+        if($state == 'up' || $state == 'down' ){
                 $db::table('usersStates')
-                    ->where('userId', $_COOKIE['userID'])
+                    ->where('userId', $user->id)
                     ->update(['state' => $state]) or die('ERROR');
                 echo 'OK';
-            }else{
-            echo 'param "state" can be only : "up" or "down" ';
-        }
+            }else {
+                echo 'param "state" can be only : "up" or "down" ';
+            }
 
-        }else{
-            echo 'To use the service please log in';
-            require_once 'app/view/autorisationPage.php';
-        }
     }
 }

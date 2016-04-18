@@ -25,12 +25,12 @@ class TeacherModel
             }
         }
 
-        if(count($readyToCall) == 0) {
+        if (count($readyToCall) == 0) {
             echo "NOBODY";
-        }
-        else{
+        } else {
             var_dump($readyToCall);
-            $this->updateUserStatus($db, $readyToCall[rand(0, count($readyToCall))]);
+            $randomUser = rand(0, count($readyToCall) - 1);
+            $this->updateUserStatus($db, $readyToCall[$randomUser]);
         }
 
     }
