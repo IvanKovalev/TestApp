@@ -24,8 +24,8 @@ class TeacherModel
                 array_push($readyToCall, $userName);
             }
         }
-
         if (count($readyToCall) == 0) {
+            echo strtotime(date("Y-m-d H:i:s"));
             echo "NOBODY";
         } else {
             var_dump($readyToCall);

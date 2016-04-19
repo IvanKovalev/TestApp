@@ -11,7 +11,7 @@ class Monitoring
     {    //init
         $monitoringModel = new MonitoringModel();
 
-       $result = $monitoringModel->monitoring();
+        $result = $monitoringModel->monitoring();
         require_once 'app/view/monitoringPage.php';
     }
 }

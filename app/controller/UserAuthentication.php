@@ -43,7 +43,8 @@ class UserAuthentication
     }
 
     public function logout()
-    {   unset($_SESSION['users'][$_COOKIE['userID']]);
+    {
+        unset($_SESSION['users'][$_COOKIE['userID']]);
         setcookie('user', null, -1, '/');
         setcookie('userID', null, -1, '/');
 
@@ -55,10 +56,10 @@ class UserAuthentication
         $userModel = new UserModel();
 
         if ($_POST['user'] && $_POST['pwd'] && $_POST['pwdConfirm']) {
-            if($_POST['pwd'] == $_POST['pwdConfirm']){
+            if ($_POST['pwd'] == $_POST['pwdConfirm']) {
                 $userModel->registration($_POST['user'], $_POST['pwd']);
                 require_once 'app/view/autorisationPage.php';
-            }else{
+            } else {
                 echo 'password and pwdConfirm do not match';
                 require_once 'app/view/registrationPage.php';
             }
